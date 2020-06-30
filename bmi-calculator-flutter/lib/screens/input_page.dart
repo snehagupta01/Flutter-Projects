@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../constants.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import '../components/icon_content.dart';
-import '../constants.dart';
+import 'package:bmi_calculator/calculator.dart';
 import 'results_page.dart';
 import '../components/bottom_button.dart';
 import '../components/round_buttton.dart';
@@ -235,11 +235,17 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             buttonTitle: 'CALCULATE',
             onTap: () {
+              Calculator cal = new Calculator(height: height, weight: weight);
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return ResultsPage();
+                    return ResultsPage(
+                      bmiResult: cal.calculateBMI(),
+                      desc: cal.getDesc(),
+                      resultText: cal.getResult(),
+                    );
                   },
                 ),
               );
