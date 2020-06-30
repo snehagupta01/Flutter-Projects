@@ -14,3 +14,21 @@ const kNUmberTextStyle = TextStyle(
 
 const KLargeButtonStyle =
     TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0);
+
+const KTitleTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 50.0,
+);
+
+const resultTextStyle = TextStyle(
+  color: Colors.green,
+  fontSize: 22.0,
+  fontWeight: FontWeight.bold,
+);
+const kBmiTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 100.0,
+);
+const kBodyTextStyle = TextStyle(
+  fontSize: 22.0,
+);

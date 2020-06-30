@@ -7,6 +7,8 @@ import 'reusable_card.dart';
 import 'icon_content.dart';
 import 'constants.dart';
 import 'results_page.dart';
+import 'bottom_button.dart';
+import 'round_buttton.dart';
 
 enum Gender { male, female }
 
@@ -230,46 +232,21 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
+          BottomButton(
+            buttonTitle: 'CALCULATE',
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return ResultsPage();
-              }));
-            },
-            child: Container(
-              color: bottomContainerColor,
-              width: double.infinity,
-              padding: EdgeInsets.only(bottom: 10.0),
-              height: bottomHeightContainer,
-              margin: EdgeInsets.only(top: 10.0),
-              child: Center(
-                child: Text(
-                  'CALCULATE',
-                  style: KLargeButtonStyle,
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ResultsPage();
+                  },
                 ),
-              ),
-            ),
+              );
+            },
           )
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.onPressed});
-
-  final IconData icon;
-  final Function onPressed;
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
-      shape: CircleBorder(),
-      elevation: 6.0,
-      fillColor: Color(0xFF4C4F5E),
-      constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
     );
   }
 }
